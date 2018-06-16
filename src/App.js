@@ -27,7 +27,7 @@ const dropZoneStyle = {
   // margin: 30,
   // padding: 30,
   width: 600,
-  height: 160,
+  height: 150,
   textAlign: 'center',
   // transition: 'all 0.5s',
 };
@@ -199,7 +199,9 @@ class App extends Component {
         }
       }
     }
-
+    const firstText = 'first';
+    const lastText = 'last';
+    const avgText = 'AVG';
     return (
       <div
         style={{
@@ -249,8 +251,13 @@ class App extends Component {
             />
           </div>
         </div>
+        <div>
+          <div style={{ color: '#FF6347' }}>{stats ? `Rest CNT:${stats.rest.data.length}, ${firstText}${BASELINE_NUM}${avgText}:${stats.rest.headAvg}, ${lastText}${BASELINE_NUM}${avgText}:${stats.rest.tailAvg}` : ''}</div>
 
-        <div style={{ width: 800 }}>
+          <div style={{ color: 'blue' }}>{stats ? `Sleep CNT:${stats.sleep.data.length}, ${firstText}${BASELINE_NUM}${avgText}:${stats.sleep.headAvg}, ${lastText}${BASELINE_NUM}${avgText}:${stats.sleep.tailAvg}` : ''}</div>
+        </div>
+
+        <div style={{ width: 760 }}>
           {stats ? <RecordChart stats={stats} /> : null}
         </div>
       </div>
