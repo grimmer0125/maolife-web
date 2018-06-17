@@ -222,7 +222,7 @@ class App extends Component {
             }}
             >
               <div>
-                <p>Try dropping pet data files here, or click to select files to upload.</p>
+                <p>Try dropping pet data files here, <br />or click to select files to upload.</p>
               </div>
             </div>
           </Dropzone>
